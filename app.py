@@ -30,7 +30,7 @@ def set_background(color):
         }}
         .center-text {{
             text-align: center;
-            font-size: 24px;
+            font-size: 30px;
             font-weight: bold;
             color: white;
         }}
@@ -38,7 +38,7 @@ def set_background(color):
             color: black !important;
             font-size: 18px;
             font-weight: bold;
-            text-align: center;
+            
         }}
         .camera-text {{
             font-size: 20px;
