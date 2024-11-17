@@ -17,7 +17,7 @@ def on_message(client, userdata, message):
     message_received = str(message.payload.decode("utf-8"))
     st.write(message_received)
 
-# Configurar colores según el estado
+# Configurar colores y estilos
 def set_background(color):
     st.markdown(
         f"""
@@ -34,8 +34,11 @@ def set_background(color):
             font-weight: bold;
             color: white;
         }}
-        .sidebar-text {{
-            color: black;
+        .sidebar-header {{
+            color: black !important;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
         }}
         .camera-text {{
             font-size: 20px;
@@ -61,7 +64,7 @@ st.subheader("No solo escucha música, ¡siente cada nota! 🎶")
 
 # Sidebar con instrucciones
 with st.sidebar:
-    st.markdown('<div class="sidebar-text"><h3>✨ ¿Cómo funciona FEELIFY? ✨</h3></div>', unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-header">✨ ¿Cómo funciona FEELIFY? ✨</div>', unsafe_allow_html=True)
     st.write("1️⃣ Haz clic en **Tomar Foto** 📸 para analizar tu estado de ánimo.")
     st.write("2️⃣ Haz clic en **Escuchar** 🎧 para descubrir tu resultado.")
     st.write("3️⃣ Confirma tu estado de ánimo con **Sí/No** 👍👎.")
