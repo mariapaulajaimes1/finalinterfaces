@@ -28,6 +28,12 @@ def set_background(color):
         h1, h2, h3, h4, h5, h6 {{
             color: white;
         }}
+        .center-text {{
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }}
         .sidebar-text {{
             color: black;
         }}
@@ -48,7 +54,9 @@ set_background("#000000")
 image = Image.open('FEELIFY.BANNER.png')
 st.image(image, width=1000)
 
-st.title("✨ Match your music with your feelings✨ 🎵 ")
+# Texto centrado
+st.markdown('<div class="center-text">✨ Match your music with your feelings✨ 🎵</div>', unsafe_allow_html=True)
+
 st.subheader("No solo escucha música, ¡siente cada nota! 🎶")
 
 # Sidebar con instrucciones
