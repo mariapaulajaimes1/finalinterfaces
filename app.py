@@ -28,6 +28,14 @@ def set_background(color):
         h1, h2, h3, h4, h5, h6 {{
             color: white;
         }}
+        .sidebar-text {{
+            color: black;
+        }}
+        .camera-text {{
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }}
         </style>
         """,
         unsafe_allow_html=True,
@@ -45,7 +53,7 @@ st.subheader("No solo escucha música, ¡siente cada nota! 🎶")
 
 # Sidebar con instrucciones
 with st.sidebar:
-    st.subheader("✨ ¿Cómo funciona FEELIFY? ✨")
+    st.markdown('<div class="sidebar-text"><h3>✨ ¿Cómo funciona FEELIFY? ✨</h3></div>', unsafe_allow_html=True)
     st.write("1️⃣ Haz clic en **Tomar Foto** 📸 para analizar tu estado de ánimo.")
     st.write("2️⃣ Haz clic en **Escuchar** 🎧 para descubrir tu resultado.")
     st.write("3️⃣ Confirma tu estado de ánimo con **Sí/No** 👍👎.")
@@ -64,7 +72,8 @@ model = load_model('keras_model.h5')
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
 # Entrada de cámara
-img_file_buffer = st.camera_input("¡Hola! Tómate una foto para analizar tu mood actual 😊")
+st.markdown('<div class="camera-text">¡Hola! Tómate una foto para analizar tu mood actual 😊</div>', unsafe_allow_html=True)
+img_file_buffer = st.camera_input("")
 
 if img_file_buffer is not None:
     img = Image.open(img_file_buffer)
