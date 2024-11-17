@@ -48,7 +48,7 @@ set_background("#000000")
 image = Image.open('FEELIFY.BANNER.png')
 st.image(image, width=1000)
 
-st.title("🎵✨ Match your music with your feelings✨ 🎵 ")
+st.title("✨ Match your music with your feelings✨ 🎵 ")
 st.subheader("No solo escucha música, ¡siente cada nota! 🎶")
 
 # Sidebar con instrucciones
