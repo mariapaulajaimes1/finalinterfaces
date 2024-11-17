@@ -58,7 +58,7 @@ image = Image.open('FEELIFY.BANNER.png')
 st.image(image, width=1000)
 
 # Texto centrado
-st.markdown('<div class="center-text">✨ Match your music with your feelings✨ 🎵</div>', unsafe_allow_html=True)
+st.markdown('<div class="center-text">✨ Match your music with your feelings✨ </div>', unsafe_allow_html=True)
 
 st.subheader("No solo escucha música, ¡siente cada nota! 🎶")
 
