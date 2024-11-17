@@ -48,7 +48,7 @@ set_background("#000000")
 image = Image.open('FEELIFY.BANNER.png')
 st.image(image, width=1000)
 
-st.title("🎵 Match your music with your feelings 💖")
+st.title("Match your music with your feelings 🎵 💖")
 st.subheader("No solo escucha música, ¡siente cada nota! 🎶")
 
 # Sidebar con instrucciones
@@ -120,7 +120,7 @@ if img_file_buffer is not None:
 
     # Mostrar botones de confirmación siempre
     if st.session_state.estado_anterior in ["feliz", "triste", "enojado"]:
-        st.write("❓ ¿Es cierto?")
+        st.write("¿Es cierto?❓")
         if st.button("✅ SÍ, así me siento"):
             st.session_state.respuesta = "si"
         if st.button("❌ NO, creo que me siento de otra manera"):
