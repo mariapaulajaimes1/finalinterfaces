@@ -84,7 +84,7 @@ if img_file_buffer is not None:
     # Condiciones para estados de ánimo
     if prediction[0][0] > 0.3 and st.session_state.estado_anterior != "feliz":
         st.header("😄 ¡Veo que te sientes feliz! 🎉")
-        set_background("#FFD700")  # Fondo amarillo
+        set_background("#f8ff78")  # Fondo amarillo
         st.audio("1feliz.mp3", format="audio/mp3", start_time=0)
         client1.publish("misabela", "{'gesto': 'feliz'}", qos=0, retain=False)
         st.session_state.estado_anterior = "feliz"
@@ -92,7 +92,7 @@ if img_file_buffer is not None:
 
     elif prediction[0][1] > 0.3 and st.session_state.estado_anterior != "triste":
         st.header("😢 ¡Veo que te sientes triste! 💔")
-        set_background("#1E90FF")  # Fondo azul
+        set_background("#7091ff")  # Fondo azul
         st.audio("1triste.mp3", format="audio/mp3", start_time=0)
         client1.publish("misabela", "{'gesto': 'triste'}", qos=0, retain=False)
         st.session_state.estado_anterior = "triste"
@@ -100,7 +100,7 @@ if img_file_buffer is not None:
 
     elif prediction[0][2] > 0.3 and st.session_state.estado_anterior != "enojado":
         st.header("😡 ¡Veo que te sientes enojado! 🔥")
-        set_background("#FF4500")  # Fondo rojo
+        set_background("#ed3b3b")  # Fondo rojo
         st.audio("1enojada.mp3", format="audio/mp3", start_time=0)
         client1.publish("misabela", "{'gesto': 'enojado'}", qos=0, retain=False)
         st.session_state.estado_anterior = "enojado"
