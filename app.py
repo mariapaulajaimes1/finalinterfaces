@@ -106,16 +106,15 @@ if img_file_buffer is not None:
         st.session_state.estado_anterior = "enojado"
         st.session_state.respuesta = None
 
-    # Confirmación del estado
+    # Mostrar botones de confirmación siempre
     if st.session_state.estado_anterior in ["feliz", "triste", "enojado"]:
-        if st.session_state.respuesta is None:
-            st.write("❓ ¿Es cierto?")
-            if st.button("✅ SÍ, así me siento"):
-                st.session_state.respuesta = "si"
-            elif st.button("❌ NO, creo que me siento de otra manera"):
-                st.session_state.respuesta = "no"
+        st.write("❓ ¿Es cierto?")
+        if st.button("✅ SÍ, así me siento"):
+            st.session_state.respuesta = "si"
+        if st.button("❌ NO, creo que me siento de otra manera"):
+            st.session_state.respuesta = "no"
 
-        # Reproducir según respuesta
+        # Reproducir canciones según la respuesta
         if st.session_state.respuesta == "si":
             if st.session_state.estado_anterior == "feliz":
                 st.write("🎶 ¡Aquí tienes una canción para celebrar tu felicidad! 😄")
@@ -126,6 +125,7 @@ if img_file_buffer is not None:
             elif st.session_state.estado_anterior == "enojado":
                 st.write("🎶 ¡Desahógate con esta canción potente! 🔥")
                 st.audio("cancionenojado.mp3", format="audio/mp3", start_time=0)
+
         elif st.session_state.respuesta == "no":
             st.write("🎵 Está bien, aquí tienes algo neutral para escuchar. 🤗")
             st.audio("neutro.mp3", format="audio/mp3", start_time=0)
