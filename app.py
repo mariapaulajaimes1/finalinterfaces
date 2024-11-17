@@ -118,14 +118,38 @@ if img_file_buffer is not None:
         if st.session_state.respuesta == "si":
             if st.session_state.estado_anterior == "feliz":
                 st.write("🎶 ¡Aquí tienes una canción para celebrar tu felicidad! 😄")
-                st.audio("cancionfeliz.mp3", format="audio/mp3", start_time=0)
+                st.components.v1.html(
+                    """
+                    <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/album/61EvHDxTH9tvyCyFwzQLTP?utm_source=generator" 
+                    width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
+                    """, height=352)
             elif st.session_state.estado_anterior == "triste":
                 st.write("🎶 Esta canción te acompañará en tu momento 💙.")
-                st.audio("canciontriste.mp3", format="audio/mp3", start_time=0)
+                st.components.v1.html(
+                    """
+                    <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1wBZWxWB0O1?utm_source=generator" 
+                    width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
+                    """, height=352)
             elif st.session_state.estado_anterior == "enojado":
                 st.write("🎶 ¡Desahógate con esta canción potente! 🔥")
-                st.audio("cancionenojado.mp3", format="audio/mp3", start_time=0)
-
+                st.components.v1.html(
+                    """
+                    <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/playlist/7iVI3u03k78JvGu8YaOKR2?utm_source=generator" 
+                    width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
+                    """, height=352)
         elif st.session_state.respuesta == "no":
             st.write("🎵 Está bien, aquí tienes algo neutral para escuchar. 🤗")
-            st.audio("neutro.mp3", format="audio/mp3", start_time=0)
+            st.components.v1.html(
+                """
+                <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/playlist/37i9dQZF1EVHGWrwldPRtj?utm_source=generator" 
+                width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"></iframe>
+                """, height=352)
+
