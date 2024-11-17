@@ -25,6 +25,9 @@ def set_background(color):
         .stApp {{
             background-color: {color};
         }}
+        h1, h2, h3, h4, h5, h6 {{
+            color: white;
+        }}
         </style>
         """,
         unsafe_allow_html=True,
@@ -152,4 +155,3 @@ if img_file_buffer is not None:
                 width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                 loading="lazy"></iframe>
                 """, height=352)
-
