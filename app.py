@@ -30,7 +30,7 @@ def set_background(color):
         }}
         .center-text {{
             text-align: center;
-            font-size: 30px;
+            font-size: 35px;
             font-weight: bold;
             color: white;
         }}
